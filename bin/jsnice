@@ -8,11 +8,15 @@ var jsnice = require('../');
 var doc = [
   'Usage:',
   '  jsnice <file>',
+  '  jsnice [--no-pretty] [--no-rename] [--no-types] <file>',
   '  jsnice (--help | --version)',
   '',
   'Options:',
   '  --help       Show this text',
   '  --version    Show jsnice version info',
+  '  --no-pretty  Dont prettify the script',
+  '  --no-rename  Dont rename variables',
+  '  --no-types   Dont add doc strings for params/returns',
 ].join('\r\n');
 
 var args = docopt.docopt(doc, {
@@ -23,7 +27,12 @@ var cwd = process.cwd();
 filePath = path.join(cwd, args['<file>']);
 
 var js = fs.readFileSync(filePath);
-jsnice.nicify(js, function(err, data) {
+var options = {
+  pretty: !args['--no-pretty'],
+  types: !args['--no-types'],
+  rename: !args['--no-rename'],
+};
+jsnice.nicify(js, options, function(err, data) {
   if (err) {
     console.error(err);
     process.exit(1);

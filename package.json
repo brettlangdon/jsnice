@@ -1,0 +1,34 @@
+{
+  "name": "jsnice",
+  "version": "0.1.0",
+  "description": "Run JSNice on your javascripts",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "jsnice": "bin/jsnice"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/brettlangdon/jsnice.git"
+  },
+  "keywords": [
+    "js",
+    "nice",
+    "jsnice",
+    "unminify",
+    "minify",
+    "deobfuscation",
+    "obfuscation"
+  ],
+  "author": "Brett Langdon <brett@blangdon.com> (http://brett.is)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brettlangdon/jsnice/issues"
+  },
+  "homepage": "https://github.com/brettlangdon/jsnice",
+  "dependencies": {
+    "docopt": "~0.4.0"
+  }
+}

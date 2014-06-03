@@ -23,6 +23,10 @@ var cwd = process.cwd();
 filePath = path.join(cwd, args['<file>']);
 
 var js = fs.readFileSync(filePath);
-jsnice.nicify(js, function(data) {
+jsnice.nicify(js, function(err, data) {
+  if (err) {
+    console.error(err);
+    process.exit(1);
+  }
   console.log(data.js);
 });

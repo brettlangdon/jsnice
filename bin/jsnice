@@ -23,9 +23,9 @@ var args = docopt.docopt(doc, {
   help: true,
   version: 'jsnice ' + require('../package.json').version,
 });
-var cwd = process.cwd();
-filePath = path.join(cwd, args['<file>']);
 
+// Resolve file path
+var filePath = args['<file>'];
 var js = fs.readFileSync(filePath);
 var options = {
   pretty: !args['--no-pretty'],

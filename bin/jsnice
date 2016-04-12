@@ -8,7 +8,7 @@ var jsnice = require('../');
 var doc = [
   'Usage:',
   '  jsnice <file>',
-  '  jsnice [--no-pretty] [--no-rename] [--no-types] <file>',
+  '  jsnice [--no-pretty] [--no-rename] [--no-types] [--suggest] <file>',
   '  jsnice (--help | --version)',
   '',
   'Options:',
@@ -17,6 +17,7 @@ var doc = [
   '  --no-pretty  Dont prettify the script',
   '  --no-rename  Dont rename variables',
   '  --no-types   Dont add doc strings for params/returns',
+  '  --suggest    Suggest new local names e.g. local$$2',
 ].join('\r\n');
 
 var args = docopt.docopt(doc, {
@@ -31,6 +32,7 @@ var options = {
   pretty: !args['--no-pretty'],
   types: !args['--no-types'],
   rename: !args['--no-rename'],
+  suggest: args['--suggest'],
 };
 jsnice.nicify(js, options, function(err, data) {
   if (err) {

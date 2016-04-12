@@ -14,7 +14,7 @@ npm install -g jsnice
 $ jsnice --help
 Usage:
   jsnice <file>
-  jsnice [--no-pretty] [--no-rename] [--no-types] <file>
+  jsnice [--no-pretty] [--no-rename] [--no-types] [--suggest] <file>
   jsnice (--help | --version)
 
 Options:
@@ -23,6 +23,7 @@ Options:
   --no-pretty  Dont prettify the script
   --no-rename  Dont rename variables
   --no-types   Dont add doc strings for params/returns
+  --suggest    Suggest new local names e.g. local$$2
 ```
 
 ```bash

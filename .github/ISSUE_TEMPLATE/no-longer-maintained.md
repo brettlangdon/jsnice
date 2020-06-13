@@ -1,6 +1,6 @@
 ---
-name: No longer maintained
-about: No longer maintained
+name: Bug report
+about: This library is no longer maintained
 title: ''
 labels: ''
 assignees: ''

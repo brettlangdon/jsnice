@@ -8,13 +8,15 @@ var jsnice = require('../');
 var doc = [
   'Usage:',
   '  jsnice <file>',
-  '  jsnice [--no-pretty] [--no-rename] [--no-types] [--suggest] <file>',
+  '  jsnice [--no-pretty] [--no-packers] [--no-transpile] [--no-rename] [--no-types] [--suggest] <file>',
   '  jsnice (--help | --version)',
   '',
   'Options:',
   '  --help       Show this text',
   '  --version    Show jsnice version info',
   '  --no-pretty  Dont prettify the script',
+  '  --no-packers  Dont detect packers',
+  '  --no-transpile  Dont transpile to ES5',
   '  --no-rename  Dont rename variables',
   '  --no-types   Dont add doc strings for params/returns',
   '  --suggest    Suggest new local names e.g. local$$2',
@@ -30,6 +32,8 @@ var filePath = args['<file>'];
 var js = fs.readFileSync(filePath);
 var options = {
   pretty: !args['--no-pretty'],
+  packers: !args['--no-packers'],
+  transpile: !args['--no-transpile'],
   types: !args['--no-types'],
   rename: !args['--no-rename'],
   suggest: args['--suggest'],

@@ -1,6 +1,6 @@
 {
   "name": "jsnice",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Run JSNice on your javascripts",
   "main": "lib/index.js",
   "scripts": {
